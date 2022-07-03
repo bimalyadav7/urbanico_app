@@ -23,6 +23,7 @@ import 'package:urbanico_app/models/project.model.dart';
 import 'package:urbanico_app/models/timesheetproject.model.dart';
 import 'package:urbanico_app/models/user.model.dart';
 import 'package:urbanico_app/models/workhour.model.dart';
+import 'package:urbanico_app/models/timesheetentries.model.dart';
 
 import 'package:urbanico_app/tools/appLocalization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' as Riverpod;
@@ -38,6 +39,7 @@ void main() async {
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(WorkhourDataAdapter());
   Hive.registerAdapter(TimesheetProjectAdapter());
+  Hive.registerAdapter(TimesheetEntriesAdapter());
 
   String platform = (kIsWeb) ? "web" : "mobile";
   AppConfig().setAppConfig(

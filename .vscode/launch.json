@@ -10,7 +10,7 @@
             "type": "dart"
         },
         {
-            "name": "urbanico_app (debug win mode)",
+            "name": "urbanico_app (debug)",
             "request": "launch",
             "type": "dart",
             "program": "lib/main_test.dart",

@@ -3,8 +3,21 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:urbanico_app/Providers/timesheet.provider.dart';
 import 'package:urbanico_app/Views/Timesheet/components/dateSelector.dart';
 import 'package:urbanico_app/Views/TimesheetNew/components/tableStickyHeader.dart';
-import 'package:urbanico_app/models/timesheetproject.model.dart';
 import 'package:urbanico_app/models/workhour.model.dart';
+
+class TimesheetEntryViewScaffold extends StatelessWidget {
+  const TimesheetEntryViewScaffold({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        actions: [MaterialButton(color: Colors.red, onPressed: () {}, child: Text("Save"))],
+      ),
+      body: SafeArea(child: TimesheetEntryView()),
+    );
+  }
+}
 
 class TableCard extends StatelessWidget {
   Widget child;
@@ -24,12 +37,10 @@ class TableCard extends StatelessWidget {
   }
 }
 
-class TimesheetMain extends StatelessWidget {
+class TimesheetEntryView extends StatelessWidget {
   final int tabIndex;
 
-  List<Widget> seletedCells = [];
-
-  TimesheetMain({Key? key, this.tabIndex = -1}) : super(key: key);
+  const TimesheetEntryView({Key? key, this.tabIndex = -1}) : super(key: key);
 
   List<Widget> makeColumns(WidgetRef ref) {
     final provider = ref.watch(timesheetNotifier);
@@ -315,6 +326,8 @@ class TimesheetMain extends StatelessWidget {
                   ),
                   MaterialButton(
                     onPressed: () {
+                      // ref.
+
                       Navigator.of(context).pop();
                     },
                     child: Text("CLOSE"),

@@ -48,6 +48,7 @@ dependencies:
   uuid: ^3.0.6
   hive: 
   hive_flutter: 
+  data_table_2: ^2.3.2
 
 dev_dependencies:
   flutter_test:

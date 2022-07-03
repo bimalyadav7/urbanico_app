@@ -83,7 +83,6 @@ class TimeSheetApi extends UrbanicoHttpConfig {
   // }
 
   Future getForemanTimesheetEntry(String userid) {
-    return http.get(Uri.parse(serviceurl + "index.php?method=get_entries_foreman&enteredby=$userid&sort=name&order=desc&offset=0&limit=10"),
-        headers: headerType);
+    return http.get(Uri.parse(serviceurl + "index.php?method=get_entries_foreman&enteredby=$userid"), headers: headerType);
   }
 }
